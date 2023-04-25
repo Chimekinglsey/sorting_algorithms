@@ -4,7 +4,7 @@
 * selection_sort - sorts an array by replacing the rightmost index with
 * with the smallest element in the array
 * @array: list of int values to sort
-* @size_t: size of the array 
+* @size: size of the array
 * Return - nothing
 */
 void selection_sort(int *array, size_t size)
@@ -20,11 +20,11 @@ void selection_sort(int *array, size_t size)
 				key = j;
 		}
 		if (key != i)
-			{
-				tmp = array[i];
-				array[i] = array[key];
-				array[key] = tmp;
-				print_array(array, size);
-			}
+		{
+			tmp = array[i];
+			array[i] = array[key];
+			array[key] = tmp;
+			print_array(array, size);
+		}
 	}
 }
