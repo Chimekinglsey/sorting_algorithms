@@ -1,5 +1,4 @@
 #include "sort.h"
-
 void swap(int *x, int *y);
 int partition(int *array, size_t size, int min, int max);
 void recursion(int *array, size_t size, int min, int max);
@@ -21,9 +20,10 @@ void swap(int *x, int *y)
 /**
 * partition - creates our partition recursively
 * @array: contains list of elements to recurse on
+* @size: length of the array to sort
 * @min: starting index of recursion
 * @max: current pivot
-* Return - nothing
+* Return: index of pivot which is an int
 */
 int partition(int *array, size_t size, int min, int max)
 {
@@ -55,6 +55,7 @@ int partition(int *array, size_t size, int min, int max)
 /**
 * recursion - creates our partition recursively
 * @array: contains list of elements to recurse on
+* @size: length of the array to sort
 * @min: starting index of recursion
 * @max: current pivot
 * Return - nothing
@@ -66,7 +67,7 @@ void recursion(int *array, size_t size, int min, int max)
 	if (max - min > 0)
 	{
 		pivot_index = partition(array, size, min, max);
-		recursion(array, size, min, pivot_index- 1);
+		recursion(array, size, min, pivot_index - 1);
 		recursion(array, size, pivot_index + 1, max);
 	}
 }
